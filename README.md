@@ -18,7 +18,7 @@ El objetivo principal es centralizar y optimizar el proceso de gestión de recla
 
 ---
 
-## 👥 Autor
+## Autor
 
 - **Sebastián Granda Córdoba**
 
