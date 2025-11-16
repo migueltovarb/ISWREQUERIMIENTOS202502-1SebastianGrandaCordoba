@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Catálogo de Vehículos de Sebastián G.C.</title>
+</head>
+<body>
+    <h1>🚗 Catálogo de Vehículos - SG CÓRDOBA</h1>
+    
+    <p>
+        <a href="{% url 'vehicle_create' %}" 
+           style="padding: 10px; background-color: green; color: white; text-decoration: none; border-radius: 5px;">
+           ➕ Añadir Nuevo Vehículo
+        </a>
+    </p>
+    
+    {% for vehicle in vehicles %}
+        <div style="border: 1px solid gray; margin: 10px; padding: 10px;">
+            <h2>Nombre: {{ vehicle.name }}</h2>
+            <p>Marca: {{ vehicle.brand }}</p>
+            <p>Año: {{ vehicle.year }}</p>
+            
+            <a href="{% url 'vehicle_update' vehicle.pk %}" 
+               style="color: blue; margin-right: 15px;">
+               Editar
+            </a> 
+            
+            <a href="{% url 'vehicle_delete' vehicle.pk %}" 
+               style="color: red;">
+               Eliminar
+            </a> 
+        </div>
+    {% empty %}
+        <p>¡El catálogo está vacío! Añade el primer vehículo para empezar a usar la aplicación de Sebastián Granda Córdoba.</p>
+    {% endfor %}
+    
+</body>
+</html>
